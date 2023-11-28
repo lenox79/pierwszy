@@ -56,3 +56,8 @@ httpServer.post('/call/', async (req, res) => {
      }, 2000);
      res.json({ success: true });
     })
+
+    httpServer.get('/status', async function (req, res) {
+        let status = await bridge.getStatus();
+         res.json({ id: '123', "status": status });
+        })
